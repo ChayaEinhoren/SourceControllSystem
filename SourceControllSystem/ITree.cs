@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SourceControllSystem.Observer
+namespace SourceControllSystem
 {
-    internal class Observer
+    public interface ITree
     {
+        public String Execute();
     }
 }
