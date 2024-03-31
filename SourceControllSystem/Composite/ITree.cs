@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SourceControllSystem
+namespace SourceControllSystem.Composite
 {
-    public interface IState
+    public interface ITree
     {
-        public void GetState();
-        public void ChangeState(Task state);
+        public string Execute();
     }
 }

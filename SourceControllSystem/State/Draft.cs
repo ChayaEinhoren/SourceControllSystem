@@ -4,18 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SourceControllSystem
+namespace SourceControllSystem.State
 {
-    public class UnderReview : IState
+    public class Draft : IState
     {
+
         public void ChangeState(Task state)
         {
-            state.status = new ReadyToMerge();
+            state.status = new Staged();
         }
+
 
         public void GetState()
         {
-            Console.WriteLine("UnderReview");
+            Console.WriteLine("Draft");
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SourceControllSystem
+namespace SourceControllSystem.Composite
 {
     public class Branch : ITree
     {

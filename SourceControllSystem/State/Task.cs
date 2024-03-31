@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SourceControllSystem
+namespace SourceControllSystem.State
 {
     public class Task
     {
         public IState status { get; set; }
-        public Task() {
+        public Task()
+        {
             status = new Draft();
         }
     }
