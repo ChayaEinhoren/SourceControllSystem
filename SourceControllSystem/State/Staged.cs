@@ -8,7 +8,7 @@ namespace SourceControllSystem.State
 {
     public class Staged : IState
     {
-        public void ChangeState(Task state)
+        public void ChangeState(Task1 state)
         {
             state.status = new Committed();
         }

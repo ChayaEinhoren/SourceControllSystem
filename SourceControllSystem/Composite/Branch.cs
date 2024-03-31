@@ -8,7 +8,7 @@ namespace SourceControllSystem.Composite
 {
     public class Branch : ITree
     {
-        List<ITree> children;
+        List<ITree> children = new List<ITree>();
 
         public void AddChild(ITree child)
         {
@@ -34,7 +34,7 @@ namespace SourceControllSystem.Composite
             foreach (ITree child in children)
             {
                 s += child.Execute();
-                if (i < s.Length - 1)
+                if (i < (children.Count - 1))
                 {
                     s += " + ";
                 }
