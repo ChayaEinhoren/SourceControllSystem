@@ -8,7 +8,7 @@ namespace SourceControllSystem
 {
     public class UnderReview : IState
     {
-        public void ChangeState()
+        public void ChangeState(IState state)
         {
             throw new NotImplementedException();
         }
