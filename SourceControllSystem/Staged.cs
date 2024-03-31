@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace SourceControllSystem
 {
-    public class Draft : IState
+    public class Staged : IState
     {
-    
         public void ChangeState(Task state)
         {
-         state.status = new Staged();
+            state.status = new Committed();
         }
-
 
         public void GetState()
         {
-            Console.WriteLine("Draft");
+            Console.WriteLine("Staged");
         }
     }
 }
