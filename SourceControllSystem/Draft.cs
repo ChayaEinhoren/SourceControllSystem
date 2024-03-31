@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace SourceControllSystem
 {
-    internal class Draft
+    public class Draft : IState
     {
+    
+        public void ChangeState(Task state)
+        {
+           
+        }
+
+
+        public void GetState()
+        {
+            Console.WriteLine("Draft");
+        }
     }
 }
