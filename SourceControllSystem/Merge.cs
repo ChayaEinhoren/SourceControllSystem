@@ -8,9 +8,9 @@ namespace SourceControllSystem
 {
     public class Merge : IState
     {
-        public void ChangeState(IState state)
+        public void ChangeState(Task state)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("merged already...");
         }
 
         public void GetState()

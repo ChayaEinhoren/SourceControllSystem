@@ -9,6 +9,8 @@ namespace SourceControllSystem
     public class Task
     {
         public IState status { get; set; }
-
+        public Task() {
+            status = new Draft();
+        }
     }
 }

@@ -10,12 +10,12 @@ namespace SourceControllSystem
     {
         public void ChangeState(Task state)
         {
-            state;
+            state.status = new Merge();
         }
 
         public void GetState()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("ReadyToMerge");
         }
     }
 }

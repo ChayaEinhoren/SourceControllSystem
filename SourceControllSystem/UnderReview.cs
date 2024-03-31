@@ -8,14 +8,14 @@ namespace SourceControllSystem
 {
     public class UnderReview : IState
     {
-        public void ChangeState(IState state)
+        public void ChangeState(Task state)
         {
-            throw new NotImplementedException();
+            state.status = new ReadyToMerge();
         }
 
         public void GetState()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("UnderReview");
         }
     }
 }
