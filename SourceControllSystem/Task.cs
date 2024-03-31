@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SourceControllSystem
 {
-    internal class Task
+    public class Task
     {
+        public IState status { get; set; }
+
     }
 }

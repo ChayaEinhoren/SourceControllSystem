@@ -8,9 +8,9 @@ namespace SourceControllSystem
 {
     public class ReadyToMerge : IState
     {
-        public void ChangeState()
+        public void ChangeState(Task state)
         {
-            throw new NotImplementedException();
+            state;
         }
 
         public void GetState()

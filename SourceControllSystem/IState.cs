@@ -9,6 +9,6 @@ namespace SourceControllSystem
     public interface IState
     {
         public void GetState();
-        public void ChangeState(IState state);
+        public void ChangeState(Task state);
     }
 }
