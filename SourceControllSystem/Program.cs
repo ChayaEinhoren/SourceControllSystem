@@ -1,6 +1,7 @@
 ﻿
 using SourceControllSystem;
 using SourceControllSystem.Composite;
+using SourceControllSystem.Momento;
 using SourceControllSystem.State;
 
 Console.WriteLine("Hello, World!");
@@ -18,5 +19,28 @@ b.AddChild(d);
 b.AddChild(f2);
 Console.WriteLine(a.Execute());
 
+#region
+Originator originator = new Originator("Super-duper-super-puper-super.");
+CareTaker caretaker = new CareTaker(originator);
 
+caretaker.Backup();
+originator.DoSomething();
+
+caretaker.Backup();
+originator.DoSomething();
+
+caretaker.Backup();
+originator.DoSomething();
+
+Console.WriteLine();
+caretaker.ShowHistory();
+
+Console.WriteLine("\nClient: Now, let's rollback!\n");
+caretaker.Undo();
+
+Console.WriteLine("\n\nClient: Once more!\n");
+caretaker.Undo();
+
+Console.WriteLine();
+#endregion
 

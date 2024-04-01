@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SourceControllSystem.Momento
 {
-    public interface IMomonto
+    public interface IMemento
     {
         string GetName();
 

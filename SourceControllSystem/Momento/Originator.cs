@@ -40,5 +40,22 @@ namespace SourceControllSystem.Momento
 
             return result;
         }
+
+        public IMemento Save()
+        {
+            return new ConcreteMemento(this._state);
+        }
+
+        // Restores the Originator's state from a memento object.
+        public void Restore(IMemento memento)
+        {
+            if (!(memento is ConcreteMemento))
+            {
+                throw new Exception("Unknown memento class " + memento.ToString());
+            }
+
+            this._state = memento.GetState();
+            Console.Write($"Originator: My state has changed to: {_state}");
+        }
     }
 }
