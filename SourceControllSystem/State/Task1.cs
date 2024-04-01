@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SourceControllSystem.Composite;
+using SourceControllSystem.Observer;
 
 namespace SourceControllSystem.State
 {
@@ -28,6 +29,11 @@ namespace SourceControllSystem.State
             {
                 observer.Update(this);
             }
+        }
+
+        public IState GetState()
+        {
+            return status;
         }
     }
 }
