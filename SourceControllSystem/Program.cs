@@ -4,8 +4,7 @@ using SourceControllSystem.Composite;
 using SourceControllSystem.Momento;
 using SourceControllSystem.State;
 
-Console.WriteLine("Hello, World!");
-
+#region
 Branch a = new Branch();
 Branch b = new Branch();
 Branch c = new Branch();
@@ -18,9 +17,13 @@ a.AddChild(f);
 b.AddChild(d);
 b.AddChild(f2);
 Console.WriteLine(a.Execute());
+Branch h = (Branch)a.CreateBranch();
+Console.WriteLine(h.Execute());
+#endregion
+
 
 #region
-Originator originator = new Originator("Super-duper-super-puper-super.");
+/*Originator originator = new Originator("Super-duper-super-puper-super.");
 CareTaker caretaker = new CareTaker(originator);
 
 caretaker.Backup();
@@ -41,6 +44,6 @@ caretaker.Undo();
 Console.WriteLine("\n\nClient: Once more!\n");
 caretaker.Undo();
 
-Console.WriteLine();
+Console.WriteLine();*/
 #endregion
 

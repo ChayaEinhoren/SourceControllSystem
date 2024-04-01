@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SourceControllSystem.Prototype;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace SourceControllSystem.Composite
 {
-    public class Branch : ITree
+    public class Branch : ITree, IPrototype
     {
         List<ITree> children = new List<ITree>();
+        public Branch() { }
+
+        public Branch(Branch b)
+        {
+            this.children = b.children;
+        }
 
         public void AddChild(ITree child)
         {
@@ -44,5 +51,9 @@ namespace SourceControllSystem.Composite
             return s;
         }
 
+        public IPrototype CreateBranch()
+        {
+            return new Branch(this);
+        }
     }
 }
