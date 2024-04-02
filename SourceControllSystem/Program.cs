@@ -27,31 +27,26 @@ Draft dr1 = new Draft();
 Task1 t1 = new Task1();
 Console.WriteLine(t1.GetState());
 dr1.ChangeState(t1);
+u1.Update(t1);
 
 
 
-//#region
-//Originator originator = new Originator("Super-duper-super-puper-super.");
-//CareTaker caretaker = new CareTaker(originator);
+#region
+Originator originator = new Originator("Chaya Einhoren && Racheli Weiner");
+CareTaker caretaker = new CareTaker(originator);
 
-//caretaker.Backup();
-//originator.DoSomething();
+caretaker.Backup();
+originator.DoSomething();
 
-//caretaker.Backup();
-//originator.DoSomething();
+Console.WriteLine();
+caretaker.ShowHistory();
 
-//caretaker.Backup();
-//originator.DoSomething();
+Console.WriteLine("\nlet's rollback!\n");
+caretaker.Undo();
 
-//Console.WriteLine();
-//caretaker.ShowHistory();
+Console.WriteLine("\n\nand again!\n");
+caretaker.Undo();
 
-//Console.WriteLine("\nClient: Now, let's rollback!\n");
-//caretaker.Undo();
-
-//Console.WriteLine("\n\nClient: Once more!\n");
-//caretaker.Undo();
-
-//Console.WriteLine();
-//#endregion
+Console.WriteLine();
+#endregion
 
