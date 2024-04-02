@@ -2,6 +2,7 @@
 using SourceControllSystem;
 using SourceControllSystem.Composite;
 using SourceControllSystem.Momento;
+using SourceControllSystem.Observer;
 using SourceControllSystem.State;
 
 #region
@@ -21,29 +22,36 @@ Branch h = (Branch)b1.CreateBranch();
 Console.WriteLine(h.GetChildren());
 #endregion
 
+User u1 = new User();
+Draft dr1 = new Draft();
+Task1 t1 = new Task1();
+Console.WriteLine(t1.GetState());
+dr1.ChangeState(t1);
 
-#region
-Originator originator = new Originator("Super-duper-super-puper-super.");
-CareTaker caretaker = new CareTaker(originator);
 
-caretaker.Backup();
-originator.DoSomething();
 
-caretaker.Backup();
-originator.DoSomething();
+//#region
+//Originator originator = new Originator("Super-duper-super-puper-super.");
+//CareTaker caretaker = new CareTaker(originator);
 
-caretaker.Backup();
-originator.DoSomething();
+//caretaker.Backup();
+//originator.DoSomething();
 
-Console.WriteLine();
-caretaker.ShowHistory();
+//caretaker.Backup();
+//originator.DoSomething();
 
-Console.WriteLine("\nClient: Now, let's rollback!\n");
-caretaker.Undo();
+//caretaker.Backup();
+//originator.DoSomething();
 
-Console.WriteLine("\n\nClient: Once more!\n");
-caretaker.Undo();
+//Console.WriteLine();
+//caretaker.ShowHistory();
 
-Console.WriteLine();
-#endregion
+//Console.WriteLine("\nClient: Now, let's rollback!\n");
+//caretaker.Undo();
+
+//Console.WriteLine("\n\nClient: Once more!\n");
+//caretaker.Undo();
+
+//Console.WriteLine();
+//#endregion
 
