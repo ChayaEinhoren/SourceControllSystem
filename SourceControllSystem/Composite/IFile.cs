@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SourceControllSystem.Composite
 {
-    public interface ITree
+    public interface IFile
     {
         public string Execute();
     }

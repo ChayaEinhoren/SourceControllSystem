@@ -8,36 +8,36 @@ namespace SourceControllSystem.Momento
 {
     public class CareTaker
     {
-        private List<IMemento> _mementos = new List<IMemento>();
+        private List<IMemento> mementos = new List<IMemento>();
 
-        private Originator _originator = null;
+        private Originator originator = null;
 
         public CareTaker(Originator originator)
         {
-            this._originator = originator;
+            this.originator = originator;
         }
 
         public void Backup()
         {
             Console.WriteLine("\nCaretaker: Saving Originator's state...");
-            this._mementos.Add(this._originator.Save());
+            this.mementos.Add(this.originator.Save());
         }
 
         public void Undo()
         {
-            if (this._mementos.Count == 0)
+            if (this.mementos.Count == 0)
             {
                 return;
             }
 
-            var memento = this._mementos.Last();
-            this._mementos.Remove(memento);
+            var memento = this.mementos.Last();
+            this.mementos.Remove(memento);
 
             Console.WriteLine("Caretaker: Restoring state to: " + memento.GetName());
 
             try
             {
-                this._originator.Restore(memento);
+                this.originator.Restore(memento);
             }
             catch (Exception)
             {
@@ -47,9 +47,9 @@ namespace SourceControllSystem.Momento
 
         public void ShowHistory()
         {
-            Console.WriteLine("Caretaker: Here's the list of mementos:");
+            Console.WriteLine("Caretaker: Here's the list of _mementos:");
 
-            foreach (var memento in this._mementos)
+            foreach (var memento in this.mementos)
             {
                 Console.WriteLine(memento.GetName());
             }

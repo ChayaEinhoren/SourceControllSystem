@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SourceControllSystem.Composite
 {
-    public class Branch : ITree, IPrototype
+    public class Branch :  IPrototype
     {
-        List<ITree> children = new List<ITree>();
+        List<IFile> children = new List<IFile>();
         public Branch() { }
 
         public Branch(Branch b)
@@ -17,28 +17,28 @@ namespace SourceControllSystem.Composite
             this.children = b.children;
         }
 
-        public void AddChild(ITree child)
+        public void AddChild(IFile child)
         {
             children.Add(child);
         }
-        public void RemoveChild(ITree child)
+        public void RemoveChild(IFile child)
         {
             children.Remove(child);
         }
 
-        public void GetChildren()
+       /* public void GetChildren()
         {
-            foreach (ITree child in children)
+            foreach (IFile child in children)
             {
                 child.Execute();
             }
-        }
+        }*/
 
-        public string Execute()
+        public string GetChildren()
         {
             string s = "Branch(";
             int i = 0;
-            foreach (ITree child in children)
+            foreach (IFile child in children)
             {
                 s += child.Execute();
                 if (i < (children.Count - 1))

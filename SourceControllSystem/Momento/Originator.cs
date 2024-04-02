@@ -19,7 +19,7 @@ namespace SourceControllSystem.Momento
 
         public void DoSomething()
         {
-            Console.WriteLine("Originator: I'm doing something important.");
+            Console.WriteLine("Originator: I'm looking for myself (:");
             this._state = this.GenerateRandomString(30);
             Console.WriteLine($"Originator: and my state has changed to: {_state}");
         }
@@ -46,7 +46,6 @@ namespace SourceControllSystem.Momento
             return new ConcreteMemento(this._state);
         }
 
-        // Restores the Originator's state from a memento object.
         public void Restore(IMemento memento)
         {
             if (!(memento is ConcreteMemento))
